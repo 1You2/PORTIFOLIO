@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leitor de Texto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Acessiblidade NTX Sneakers</h1>
+  <p id="texto">
+    Bem-vindo à NTX Sneakers! Aqui você encontra os melhores tênis do mercado, com estilo, conforto e originalidade. Aproveite nossas ofertas!
+  </p>
+
+  <button onclick="lerTexto()">🔊 Ouvir Texto</button>
+
+  <script>
+    function lerTexto() {
+      const texto = document.getElementById("texto").innerText;
+      const mensagem = new SpeechSynthesisUtterance(texto);
+      mensagem.lang = "pt-BR";
+      mensagem.rate = 1; // Velocidade da fala (1 é o normal)
+      window.speechSynthesis.speak(mensagem);
+    }
+  </script>
+
+</body>
+</html>
